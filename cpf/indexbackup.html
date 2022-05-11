@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa Física</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-notify.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00');
+        })
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#dataNascimento').mask('00/00/0000');
+        })
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#idade').mask('000');
+        })
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#cep').mask('00000-000');
+        })
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#telefone').mask('(00) 0000-0000');
+        })
+        </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#celular').mask('(00) 00000-0000');
+        })
+        </script>
+    <script>
+        function confirmacao(){
+            $.notify({
+                message: 'Cadastro enviado com sucesso.'
+            } , {
+                type: 'success'
+            }) ;
+            return false
+            }  
+        </script>
+
+</head>
+<body>
+    <form name="formCadastro" method="post" action="cliente-empresa.php" onsubmit="return confirmacao()">
+    <div class="container">
+        <div class="card">
+            <div class="form-group" class="card-header">
+                <h1>Dados Pessoais</h1>
+            </div>
+        <div class="form-group">
+            <label>CPF:</label>
+            <input required type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00"/>
+            </div>
+        <div class="form-group">
+            <label>Nome Completo:</label>
+            <input required type="text" name="nome" id="nome" class="form-control" placeholder="Digite o seu nome completo"/>
+            </div>
+        <div class="form-group">
+            <label>E-mail:</label>
+            <input required type="email" name="email" id="email" class="form-control" placeholder="Digite o seu e-mail"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Data de Nascimento:</label>
+            <input required type="text" name="dataNascimento" id="dataNascimento" class="form-control" placeholder="00/00/0000"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Idade:</label>
+            <input required type="text" name="idade" id="idade" class="form-control" placeholder="Sua idade"/>
+            </div>
+        <br>
+
+        <div class="card">
+            <div class="form-group" class="card-header">
+                <h1>Endereço</h1>
+            </div>
+        <div class="form-group">
+            <label>CEP:</label>
+            <input required type="text" name="cep" id="cep" class="form-control" placeholder="000000-000"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Rua/Avenida:</label>
+            <input required type="text" name="r/v" id="r/v" class="form-control" placeholder="Digite o seu endereço"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Número:</label>
+            <input required type="text" name="num" id="num" class="form-control"/>
+            </div>
+        <div class="form-group">
+            <label>Bairro:</label>
+            <input required type="text" name="bairro" id="bairro" class="form-control" placeholder="Digite o seu bairro"/>
+            </div>
+        <div class="form-group">
+            <label>Complemento:</label>
+            <input required type="text" name="complemento" id="complemento" class="form-control"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Município:</label>
+            <input required type="text" name="municipio" id="municipio" class="form-control"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>UF:</label>
+            <input required type="text" name="uf" id="uf" class="form-control"/>
+            </div>
+
+        <div class="card">
+            <div class="form-group" class="card-header">
+                <h1>Contato</h1>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Telefone Fixo:</label>
+            <input type="text" name="telefone" id="telefone" class="form-control" placeholder="(00) 0000-0000"/>
+            </div>
+        <div style="display: inline-block" class="form-group">
+            <label>Celular:</label>
+            <input type="text" name="celular" id="celular" class="form-control" placeholder="(00) 00000-0000"/>
+            </div>
+
+        <div class="card">
+            <div class="form-group" class="card-header">
+                <h1>Autenticação</h1>
+            </div>
+        <div class="form-group">
+            <label>E-mail:</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Digite o seu e-mail"/>
+            </div>
+        <div class="form-group">
+            <label>Confirmação de E-mail:</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Digite novamente o seu e-mail"/>
+        <div class="form-group">
+            <label>Senha:</label>
+            <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite a sua senha"/>
+        <div class="form-group">
+            <label>Confirmação de Senha:</label>
+            <input type="password" name="senha" id="senha" class="form-control" placeholder="Digite a sua senha"/>
+            <br>
+        <button class="btn btn-primary">
+            Enviar cadastro
+        </button>
+    </form>
+</body>
+</html>

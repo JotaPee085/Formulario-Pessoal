@@ -1,0 +1,2 @@
+fazer o processo de confirmação de email e senha(no mesmo formulario);
+fazer o processo de cálculo da data de nascimento, e mostrar o resultado no campo idade(calculo automatico).
